@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+    #loading {
+      text-align: center;
+    }
+    #flash {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: white;
+      z-index: 10;
+      animation: flash 0.12s infinite;
+    }
+    @keyframes flash {
+      0%   { background: white; }
+      50%  { background: black; }
+      100% { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <h2>Welcome</h2>
+    <p>Loading...</p>
+  </div>
+  <div id="flash"></div>
+  <script>
+    setTimeout(function() {
+      document.getElementById("flash").style.display = "block";
+      setTimeout(function() {
+        window.location.href = "https://thisisnotajumpscare.com/";
+      }, 300);
+    }, 2000);
+  </script>
+</body>
+</html>
